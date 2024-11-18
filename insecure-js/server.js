@@ -1,3 +1,4 @@
+const escapeHtml = require('lodash.escape');
 const http = require('http');
 const _ = require('lodash');
 const qs = require('querystring');
@@ -60,7 +61,7 @@ const server = http.createServer((req, res) => {
           }
         } catch (error) {
           console.error("Raw SQL error:", error);
-          responseMessages.push(`<p>An error occurred: ${error.message}</p>`);
+          responseMessages.push(`<p>An error occurred: ${escapeHtml(error.message)}</p>`);
         }
       }
 
