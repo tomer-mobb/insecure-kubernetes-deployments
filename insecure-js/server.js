@@ -97,7 +97,7 @@ const server = http.createServer((req, res) => {
           responseMessages.push(`<p>Executed template. Check server console for output.</p>`);
         } catch (error) {
           console.error(error);
-          responseMessages.push(`<p>An error occurred: ${error.message}</p>`);
+          responseMessages.push(`<p>An error occurred: ${escapeHtml(error.message)}</p>`);
         }
       }
 
