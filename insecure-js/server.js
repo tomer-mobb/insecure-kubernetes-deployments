@@ -127,7 +127,7 @@ const server = http.createServer((req, res) => {
           const end = Date.now();
           const timeTaken = end - start;
           console.error(error);
-          responseMessages.push(`<p>An error occurred while processing the version range: ${error.message}. Time taken: ${timeTaken}ms</p>`);
+          responseMessages.push(`<p>An error occurred while processing the version range: ${escapeHtml(error.message)}. Time taken: ${timeTaken}ms</p>`);
         }
       }
 
