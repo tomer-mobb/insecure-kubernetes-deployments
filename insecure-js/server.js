@@ -155,7 +155,7 @@ const server = http.createServer((req, res) => {
           }
         } catch (error) {
           console.error(error);
-          responseMessages.push(`<p>An error occurred while processing the JSON5 data: ${error.message}</p>`);
+          responseMessages.push(`<p>An error occurred while processing the JSON5 data: ${escapeHtml(error.message)}</p>`);
         }
       }
 
